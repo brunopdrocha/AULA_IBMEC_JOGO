@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://xnnf5xhym2ah"]
+
+[ext_resource type="Script" path="res://principal.gd" id="1_nka2u"]
+[ext_resource type="Script" path="res://character_body_2d.gd" id="2_s1ua7"]
+[ext_resource type="Texture2D" uid="uid://bqe50olpi7gk4" path="res://WieldWeaponReaper-Sheet.png" id="2_u5uui"]
+
+[node name="Principal" type="Node2D"]
+script = ExtResource("1_nka2u")
+magic_number = 6
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_s1ua7")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_u5uui")
