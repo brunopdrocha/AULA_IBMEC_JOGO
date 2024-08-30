@@ -1,14 +1,31 @@
 extends Node2D
 
-@export var magic_number = 3
-var imprimiu = false
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	print_debug("Start the Game") # Replace with function body.
+const plat = preload("res://plataform.tscn")
+var uma_plat
 
+func _ready():
+	var tamanho = 50
+	
+	var contador = 0
+	while contador < 22:
+		uma_plat = plat.instantiate()
+		uma_plat.position.y = 625
+		uma_plat.position.x = tamanho * (contador + 1) - 25
+		self.add_child(uma_plat)
+		contador += 1
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if magic_number > 5 and not imprimiu:
-		print_debug("Numero magico aumentou")
-		imprimiu = true
+	var locais = [
+		1,0,0,0,1,0,
+		1,0,0,0,1,
+		1,1,1,1,1,
+		1,1,1,1,1,1,1
+	]
+	
+	contador = 0
+	for i in locais:
+		if i == 1:
+			uma_plat = plat.instantiate()
+			uma_plat.position.y = 300
+			uma_plat.position.x = tamanho * (contador + 1) - 25
+			self.add_child(uma_plat)
+		contador += 1

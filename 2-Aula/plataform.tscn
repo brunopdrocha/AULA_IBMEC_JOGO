@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkidughdswkyy"]
+
+[ext_resource type="Texture2D" uid="uid://dicsw4bd8nxf8" path="res://quadrado.png" id="1_ndg3h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohd7c"]
+size = Vector2(50, 50)
+
+[node name="Plataform" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_ohd7c")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/CollisionShape2D"]
+texture = ExtResource("1_ndg3h")
